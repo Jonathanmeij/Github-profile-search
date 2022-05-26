@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --greenBlue: rgba(81, 176, 176, 1);
+  --lightGrey: #e7e7e7;
+  --darkGrey: #bdbdbd;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding: 0 7.5%;
+  color: black;
+  min-height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgba(174, 201, 235, 1) 0%,
+    rgba(41, 38, 90, 1) 100%
+  );
+}
+
+nav {
+  display: flex;
+  margin: 5% 0%;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+main {
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.container {
+  background: white;
+  color: black;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 500px;
+}
+
+.searchContainer {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#search {
+  display: block;
+  margin: auto;
+  font-family: inherit;
+  height: 30px;
+  padding: 0 40px;
+  border-style: none;
+  border-radius: inherit;
+  background: var(--greenBlue);
+  color: white;
+}
+
+#search:hover {
+  background: rgb(65, 141, 141);
+}
+#input {
+  margin: 10px;
+  margin-top: 5px;
+  border-style: none;
+  outline: var(--darkGrey) solid 1px;
+  background: var(--lightGrey);
+  width: 80%;
+  height: 30px;
+  border-radius: inherit;
+  padding: 0px 10px;
+  font-family: inherit;
+}
+
+#avatar {
+  height: 120px;
+  border-radius: 5000px;
+  outline: var(--darkGrey) solid 1px;
+  margin-top: 5px;
+}
+
+h3 {
+  font-weight: 400;
+  margin: 10px;
+}
+
+p {
+  margin: 0;
+  font-weight: 200;
+  color: #8b8b8b;
+}
+
+.count {
+  font-weight: 400;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  margin: 15px 0px;
+}
+
+hr {
+  border: 1px solid rgb(207, 207, 207);
+  width: 85%;
+  margin: auto;
+}
+
+.top-repositories {
+  background: var(--lightGrey);
+  border-radius: inherit;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+.repo a {
+  color: black;
+  text-decoration: none;
+}
+
+.repo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.repo:hover a {
+  color: var(--greenBlue);
+}
+
+.repo:hover {
+  background: #e0e0e0;
+  border-radius: inherit;
+}
+
+.repo {
+  font-size: 12px;
+}
