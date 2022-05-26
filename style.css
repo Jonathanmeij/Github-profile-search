@@ -96,7 +96,7 @@ input:focus {
 #avatar {
   height: 120px;
   border-radius: 5000px;
-  outline: var(--darkGrey) solid 1px;
+  box-shadow: 0 0 0 1px var(--darkGrey);
   margin-top: 5px;
 }
 
@@ -228,4 +228,8 @@ a {
 
 a:hover {
   color: var(--greenBlue);
+}
+
+main {
+  margin-bottom: 7.5%;
 }
