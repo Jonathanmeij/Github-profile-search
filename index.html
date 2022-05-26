@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Github profile</title>
 </head>
-<body>
+<body class="dark-mode">
     <nav>
         <h1>Github profile</h1>
         <span class="material-icons">dark_mode</span>
@@ -17,13 +17,11 @@
     <main id="main">
         <div class="searchContainer container">
             <h2>Search profile</h2>
-            <input id="input" type="text" placeholder="Username">
+            <input class="input" type="text" placeholder="Username">
+            <span id="error">Invalid username</span>
             <button id="search">search</button>
         </div>
-
     </main>
-    
-    
     <script src="main.js"></script>
 </body>
 </html>

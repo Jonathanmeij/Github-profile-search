@@ -4,6 +4,7 @@
   --greenBlue: rgba(81, 176, 176, 1);
   --lightGrey: #e7e7e7;
   --darkGrey: #bdbdbd;
+  --black: rgb(22, 22, 22);
 }
 
 html,
@@ -30,8 +31,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: white;
-}
-main {
 }
 
 h1 {
@@ -70,14 +69,16 @@ h2 {
   border-radius: inherit;
   background: var(--greenBlue);
   color: white;
+  margin-top: 10px;
 }
 
 #search:hover {
   background: rgb(65, 141, 141);
 }
-#input {
+input {
   margin: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   border-style: none;
   outline: var(--darkGrey) solid 1px;
   background: var(--lightGrey);
@@ -157,4 +158,58 @@ h4 {
 
 .repo {
   font-size: 12px;
+}
+
+.invalid {
+  background-color: #e2d2d2;
+  outline-color: #dd7f7f;
+}
+
+#error {
+  display: none;
+  position: relative;
+  color: #db5757;
+  font-size: 14px;
+}
+
+.dark-mode {
+  background: linear-gradient(
+    45deg,
+    rgba(174, 201, 235, 1) 0%,
+    rgba(41, 38, 90, 1) 100%
+  );
+  background-color: rgb(54, 54, 54);
+  background-blend-mode: overlay;
+}
+
+.dark-mode .container {
+  background: var(--black);
+  color: white;
+}
+
+.dark-mode input {
+  background: rgb(46, 46, 46);
+  color: white;
+  outline-color: rgb(87, 87, 87);
+}
+
+.dark-mode #search {
+  color: var(--black);
+}
+
+.dark-mode .top-repositories {
+  background: rgb(46, 46, 46);
+  color: white;
+}
+
+.dark-mode a {
+  color: white;
+}
+
+.dark-mode hr {
+  border: 1px solid rgb(75, 75, 75);
+}
+
+.material-icons {
+  cursor: pointer;
 }

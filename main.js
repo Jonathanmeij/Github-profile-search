@@ -1,8 +1,21 @@
 const searchButton = document.getElementById("search");
 const apiUrl = "https://api.github.com/users/";
+const error = document.getElementById("error");
+const body = document.body;
+const darkModeButton = document.getElementsByClassName("material-icons")[0];
+
+darkModeButton.onclick = () => {
+  body.classList.toggle("dark-mode");
+};
 
 async function getProfile(name) {
   const respone = await fetch(apiUrl + name);
+
+  if (respone.status == 404) {
+    invalidUsername();
+    return;
+  }
+
   const data = await respone.json();
   return data;
 }
@@ -25,19 +38,29 @@ async function getTopRepos(name) {
   return topRepos;
 }
 
-const inputfield = document.getElementById("input");
+const inputfield = document.getElementsByClassName("input")[0];
+
+const invalidUsername = (data) => {
+  inputfield.classList.add("invalid");
+  error.style.display = "block";
+  inputfield.value = "";
+};
 
 inputfield.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    console.log("earaer");
     document.getElementById("search").click();
   }
 });
 
 searchButton.onclick = async () => {
-  const user = document.getElementById("input").value;
+  inputfield.classList.remove("invalid");
+  const input = document.getElementsByClassName("input")[0];
+  const user = input.value;
   const data = await getProfile(user);
   const topRepos = await getTopRepos(user);
+
+  error.style.display = "none";
+  input.value = "";
   createDomElements(data, topRepos);
 };
 
@@ -124,7 +147,6 @@ function createDomElements(data, topRepos) {
     repoDiv.classList.add("repo");
 
     const aTag = document.createElement("a");
-    console.log(element);
     aTag.innerHTML = element.name;
     aTag.href = element.html_url;
     repoDiv.appendChild(aTag);
