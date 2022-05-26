@@ -80,13 +80,17 @@ input {
   margin-top: 10px;
   margin-bottom: 5px;
   border-style: none;
-  outline: var(--darkGrey) solid 1px;
+  box-shadow: 0 0 0 1px var(--darkGrey);
   background: var(--lightGrey);
   width: 80%;
   height: 30px;
   border-radius: inherit;
   padding: 0px 10px;
   font-family: inherit;
+}
+
+input:focus {
+  outline-color: var(--greenBlue);
 }
 
 #avatar {
@@ -190,7 +194,7 @@ h4 {
 .dark-mode input {
   background: rgb(46, 46, 46);
   color: white;
-  outline-color: rgb(87, 87, 87);
+  box-shadow: 0 0 0 1px rgb(78, 78, 78);
 }
 
 .dark-mode #search {
@@ -210,6 +214,18 @@ h4 {
   border: 1px solid rgb(75, 75, 75);
 }
 
+.dark-mode .repo:hover {
+  background: rgb(39, 39, 39);
+}
+
 .material-icons {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--greenBlue);
 }

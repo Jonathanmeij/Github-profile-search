@@ -88,7 +88,14 @@ function createDomElements(data, topRepos) {
   container.appendChild(avatar);
 
   const h3 = document.createElement("h3");
-  h3.innerHTML = name;
+
+  const aName = document.createElement("a");
+
+  aName.href = data.html_url;
+  aName.innerHTML = name;
+
+  h3.appendChild(aName);
+
   container.appendChild(h3);
 
   //stats
