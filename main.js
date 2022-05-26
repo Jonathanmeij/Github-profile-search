@@ -16,14 +16,23 @@ async function getTopRepos(name) {
   );
 
   const topRepos = [];
-  for (let i = 0; i < 4; i++) {
-    if (highestToLowest[i] !== null) {
+  for (let i = 0; i < 5; i++) {
+    if (highestToLowest[i] !== undefined) {
       topRepos.push(highestToLowest[i]);
     }
   }
 
   return topRepos;
 }
+
+const inputfield = document.getElementById("input");
+
+inputfield.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    console.log("earaer");
+    document.getElementById("search").click();
+  }
+});
 
 searchButton.onclick = async () => {
   const user = document.getElementById("input").value;
@@ -115,6 +124,7 @@ function createDomElements(data, topRepos) {
     repoDiv.classList.add("repo");
 
     const aTag = document.createElement("a");
+    console.log(element);
     aTag.innerHTML = element.name;
     aTag.href = element.html_url;
     repoDiv.appendChild(aTag);
